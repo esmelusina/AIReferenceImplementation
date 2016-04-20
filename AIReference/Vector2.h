@@ -1,5 +1,8 @@
 #pragma once
-
+/*
+    Didn't actually test any of this stuff,
+    yolo.
+*/
 #include <cmath>
 
 union Vector2
@@ -7,7 +10,7 @@ union Vector2
     struct { float x, y; };
     float v[2];
 
-    static Vector2 fromXZ(float *vec3)  { return Vector2{ vec3[0],vec3[1] }; }
+    static Vector2 fromXZ(float *vec3)  { return Vector2{ vec3[0],vec3[2] }; }
     static constexpr Vector2 zero()     { return{0,0}; }
     static Vector2 fromAngle(float a)   { return {cos(a),sin(a)}; } // build vector from an angle
 };
@@ -49,7 +52,7 @@ inline Vector2 snap(const Vector2 &q, const Vector2 &a, const Vector2 &b)       
 inline Vector2 lerp(const Vector2 &start, const Vector2 &end, float a) { return (1 - a)*start + a*end; }
 
 // clamp the vector's length between 1 and the provided maximum
-inline Vector2 truncate(const Vector2 &a, float max) { return clamp(a,normal(a),normal(a)*max); }
+inline Vector2 truncate(const Vector2 &a, float max) { return clamp(a, normal(a), normal(a)*max); }
 
 inline Vector2 perp(const Vector2 &a, bool right = false) { return Vector2{ (right*2 - 1) * a.y, (1 - 2*right) * a.x}; }
 

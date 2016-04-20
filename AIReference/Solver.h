@@ -41,7 +41,7 @@ std::list<T> FindPath(const Graph<T> &graph, const T &start, const T &goal,
 
     // find indices for the starting nodes
     int startNode = graph.findNode(start, Heuristic, searchRange);
-    int goalNode  = graph.findNode(goal, Heuristic, searchRange);
+    int goalNode  = graph.findNode(goal , Heuristic, searchRange);
     
     assert(startNode >= 0 && goalNode >= 0);
 

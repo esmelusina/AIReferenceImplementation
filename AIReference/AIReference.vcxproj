@@ -121,7 +121,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="Solver.h" />
+    <ClInclude Include="Steering.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
